@@ -3,7 +3,7 @@
     <div :class="$style.image">
       <img
         v-if="poster"
-        :src="poster"
+        v-lazy="poster"
         :alt="episode.name"
       >
 

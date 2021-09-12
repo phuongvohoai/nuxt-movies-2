@@ -28,7 +28,7 @@
           <div :class="`modal__${type}`">
             <iframe
               v-if="type === 'iframe' && activeItem"
-              :src="activeItem.src"
+              v-lazy="activeItem.src"
               frameborder="0"
               allow="autoplay; encrypted-media"
               allowfullscreen
@@ -36,7 +36,7 @@
 
             <img
               v-if="type === 'image' && activeItem"
-              :src="activeItem.src"
+              v-lazy="activeItem.src"
               alt=""
             >
           </div>

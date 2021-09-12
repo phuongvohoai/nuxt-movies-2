@@ -7,7 +7,7 @@
       <div class="credits-item__img">
         <img
           v-if="poster"
-          :src="poster"
+          v-lazy="poster"
           :alt="person.name"
         >
 

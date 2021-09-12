@@ -4,7 +4,7 @@
       <div :class="$style.poster">
         <img
           v-if="avatar"
-          :src="avatar"
+          v-lazy="avatar"
           :alt="person.name"
         >
 
@@ -24,7 +24,7 @@
         <div v-if="person.biography">
           <img
             v-if="avatar"
-            :src="avatar"
+            v-lazy="avatar"
             :alt="person.name"
           >
 
