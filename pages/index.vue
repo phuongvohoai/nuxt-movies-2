@@ -1,48 +1,58 @@
 <template>
   <main class="main">
-    <Hero :item="featured" />
+    <LazyHydrate when-idle>
+      <Hero :item="featured" />
+    </LazyHydrate>
 
-    <ListingCarousel
-      v-if="trendingMovies && trendingMovies.results.length"
-      :title="trendingMoviesTitle"
-      :view-all-url="trendingMoviesUrl"
-      :items="trendingMovies"
-    />
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="trendingMovies && trendingMovies.results.length"
+        :title="trendingMoviesTitle"
+        :view-all-url="trendingMoviesUrl"
+        :items="trendingMovies"
+      />
+    </LazyHydrate>
 
-    <ListingCarousel
-      v-if="nowPlayingMovies && nowPlayingMovies.results.length"
-      :title="nowPlayingMoviesTitle"
-      :view-all-url="nowPlayingMoviesUrl"
-      :items="nowPlayingMovies"
-    />
-
-    <ListingCarousel
-      v-if="upcomingMovies && upcomingMovies.results.length"
-      :title="upcomingMoviesTitle"
-      :view-all-url="upcomingMoviesUrl"
-      :items="upcomingMovies"
-    />
-
-    <ListingCarousel
-      v-if="trendingTv && trendingTv.results.length"
-      :title="trendingTvTitle"
-      :view-all-url="trendingTvUrl"
-      :items="trendingTv"
-    />
-
-    <ListingCarousel
-      v-if="topRatedTv && topRatedTv.results.length"
-      :title="topRatedTvTitle"
-      :view-all-url="topRatedTvUrl"
-      :items="topRatedTv"
-    />
-
-    <ListingCarousel
-      v-if="onTheAirTv && onTheAirTv.results.length"
-      :title="onTheAirTvTitle"
-      :view-all-url="onTheAirTvUrl"
-      :items="onTheAirTv"
-    />
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="nowPlayingMovies && nowPlayingMovies.results.length"
+        :title="nowPlayingMoviesTitle"
+        :view-all-url="nowPlayingMoviesUrl"
+        :items="nowPlayingMovies"
+      />
+    </LazyHydrate>
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="upcomingMovies && upcomingMovies.results.length"
+        :title="upcomingMoviesTitle"
+        :view-all-url="upcomingMoviesUrl"
+        :items="upcomingMovies"
+      />
+    </LazyHydrate>
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="trendingTv && trendingTv.results.length"
+        :title="trendingTvTitle"
+        :view-all-url="trendingTvUrl"
+        :items="trendingTv"
+      />
+    </LazyHydrate>
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="topRatedTv && topRatedTv.results.length"
+        :title="topRatedTvTitle"
+        :view-all-url="topRatedTvUrl"
+        :items="topRatedTv"
+      />
+    </LazyHydrate>
+    <LazyHydrate when-visible>
+      <ListingCarousel
+        v-if="onTheAirTv && onTheAirTv.results.length"
+        :title="onTheAirTvTitle"
+        :view-all-url="onTheAirTvUrl"
+        :items="onTheAirTv"
+      />
+    </LazyHydrate>
     <button class="view-policy" @click="viewPolicy">View policy</button>
 
     <LazyLargePolicyModal
@@ -63,11 +73,13 @@ import {
 } from '~/utils/api'
 import Hero from '~/components/Hero'
 import ListingCarousel from '~/components/ListingCarousel'
+import LazyHydrate from 'vue-lazy-hydration'
 
 export default {
   components: {
     Hero,
     ListingCarousel,
+    LazyHydrate,
   },
 
   async asyncData({ error }) {
