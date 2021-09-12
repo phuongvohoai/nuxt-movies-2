@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import SearchForm from '~/components/global/SearchForm'
-import Nav from '~/components/global/Nav'
-import Footer from '~/components/global/Footer'
+import SearchForm from '~/components/SearchForm'
+import Nav from '~/components/Nav'
+import Footer from '~/components/Footer'
 
 export default {
   components: {

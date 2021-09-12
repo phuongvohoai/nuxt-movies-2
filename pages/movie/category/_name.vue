@@ -16,7 +16,7 @@
 
 <script>
 import { getTrending, getMovies, getListItem } from '~/utils/api'
-import TopNav from '~/components/global/TopNav'
+import TopNav from '~/components/TopNav'
 import Listing from '~/components/Listing'
 
 export default {

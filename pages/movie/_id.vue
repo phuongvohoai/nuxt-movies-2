@@ -58,7 +58,7 @@
 import { getMovie, getMovieRecommended } from '~/utils/api'
 import { TMDB_IMAGE_URL } from '~/data/consts'
 import { name, yearStart } from '~/mixins/Details'
-import TopNav from '~/components/global/TopNav'
+import TopNav from '~/components/TopNav'
 import Hero from '~/components/Hero'
 import MediaNav from '~/components/MediaNav'
 import MovieInfo from '~/components/movie/MovieInfo'

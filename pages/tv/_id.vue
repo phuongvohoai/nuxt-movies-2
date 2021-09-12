@@ -65,7 +65,7 @@
 import { getTvShow, getTvShowRecommended } from '~/utils/api'
 import { TMDB_IMAGE_URL } from '~/data/consts'
 import { name, yearStart, yearEnd } from '~/mixins/Details'
-import TopNav from '~/components/global/TopNav'
+import TopNav from '~/components/TopNav'
 import Hero from '~/components/Hero'
 import MediaNav from '~/components/MediaNav'
 import TvInfo from '~/components/tv/TvInfo'

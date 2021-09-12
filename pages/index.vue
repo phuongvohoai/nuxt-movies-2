@@ -43,6 +43,12 @@
       :view-all-url="onTheAirTvUrl"
       :items="onTheAirTv"
     />
+    <button @click="viewPolicy">View policy</button>
+
+    <LargePolicyModal
+      v-if="isShowPolicyModal"
+      @close="isShowPolicyModal = !isShowPolicyModal"
+    />
   </main>
 </template>
 
@@ -108,6 +114,12 @@ export default {
       error({ statusCode: 504, message: 'Data not available' })
     }
   },
+  
+  data() {
+    return {
+      isShowPolicyModal: false,
+    }
+  },
 
   computed: {
     trendingMoviesTitle() {
@@ -157,6 +169,11 @@ export default {
     onTheAirTvUrl() {
       return { name: 'tv-category-name', params: { name: 'on_the_air' } }
     },
+  },
+  methods: {
+    viewPolicy() {
+      this.isShowPolicyModal = !this.isShowPolicyModal;
+    }
   },
 }
 </script>

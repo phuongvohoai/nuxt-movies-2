@@ -28,7 +28,7 @@
 <script>
 import { getPerson } from '~/utils/api'
 import { TMDB_IMAGE_URL } from '~/data/consts'
-import TopNav from '~/components/global/TopNav'
+import TopNav from '~/components/TopNav'
 import PersonInfo from '~/components/person/PersonInfo'
 import MediaNav from '~/components/MediaNav'
 import CreditsHistory from '~/components/person/CreditsHistory'
