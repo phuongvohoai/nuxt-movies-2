@@ -47,7 +47,14 @@
 </template>
 
 <script>
-import { getTrending, getMovie, getTvShow, getListItem } from '~/utils/api'
+import {
+  getTrending,
+  getMovie,
+  getMovies,
+  getTvShow,
+  getTvShows,
+  getListItem,
+} from '~/utils/api'
 import Hero from '~/components/Hero'
 import ListingCarousel from '~/components/ListingCarousel'
 
@@ -59,13 +66,22 @@ export default {
 
   async asyncData({ error }) {
     try {
-      const trendingMovies = await getTrending('movie')
-      const nowPlayingMovies = await getTrending('movie')
-      const upcomingMovies = await getTrending('movie')
+      const [
+        trendingMovies,
+        nowPlayingMovies,
+        upcomingMovies,
+        trendingTv,
+        topRatedTv,
+        onTheAirTv,
+      ] = await Promise.all([
+        getTrending('movie'),
+        getMovies('now_playing'),
+        getMovies('upcoming'),
+        getTrending('tv'),
+        getTvShows('top_rated'),
+        getTvShows('on_the_air'),
+      ])
 
-      const trendingTv = await getTrending('tv')
-      const topRatedTv = await getTrending('tv')
-      const onTheAirTv = await getTrending('tv')
       let featured
 
       // feature a random item from movies or tv

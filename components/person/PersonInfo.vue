@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import { TMDB_IMAGE_URL } from '~/data/consts'
 import ExternalLinks from '~/components/ExternalLinks'
 
@@ -156,6 +157,9 @@ export default {
       }
 
       return age
+    },
+    formatBirthday(birthday) {
+      return moment(birthday).format();
     }
   }
 }

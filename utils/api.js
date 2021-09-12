@@ -84,6 +84,7 @@ export function getTrending (media, page = 1) {
   return fetchTMD(`trending/${media}/week`, { page })
 };
 
+
 /**
  * Discover media by genre
  */
