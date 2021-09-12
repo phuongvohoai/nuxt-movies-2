@@ -16,7 +16,7 @@
 
           <img
             v-if="backdrop"
-            :src="backdrop"
+            v-lazy="backdrop"
             :class="$style.image"
             :alt="name"
           >

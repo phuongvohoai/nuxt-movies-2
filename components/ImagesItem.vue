@@ -6,7 +6,7 @@
     >
       <div :class="$style.image">
         <img
-          :src="image.thumb"
+          v-lazy="image.thumb"
           alt=""
         >
       </div>

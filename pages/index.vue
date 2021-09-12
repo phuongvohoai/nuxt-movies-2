@@ -45,7 +45,7 @@
     />
     <button class="view-policy" @click="viewPolicy">View policy</button>
 
-    <LargePolicyModal
+    <LazyLargePolicyModal
       v-if="isShowPolicyModal"
       @close="isShowPolicyModal = !isShowPolicyModal"
     />

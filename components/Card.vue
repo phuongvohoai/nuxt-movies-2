@@ -7,7 +7,7 @@
       <div class="card__img">
         <img
           v-if="poster"
-          :src="poster"
+          v-lazy="poster"
           :alt="name"
         >
 

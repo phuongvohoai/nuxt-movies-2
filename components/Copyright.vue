@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import moment from 'moment'
+const moment = () => import('moment')
 
 export default {
   data() {

@@ -4,7 +4,7 @@
       <div :class="$style.poster">
         <img
           v-if="poster"
-          :src="poster"
+          v-lazy="poster"
           :alt="name"
         >
 

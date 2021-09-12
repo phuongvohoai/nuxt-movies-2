@@ -9,7 +9,7 @@
       <div :class="$style.image">
         <img
           v-if="video.thumb"
-          :src="video.thumb"
+          v-lazy="video.thumb"
           :alt="video.name"
         >
 
