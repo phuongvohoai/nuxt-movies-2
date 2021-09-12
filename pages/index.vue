@@ -43,7 +43,7 @@
       :view-all-url="onTheAirTvUrl"
       :items="onTheAirTv"
     />
-    <button @click="viewPolicy">View policy</button>
+    <button class="view-policy" @click="viewPolicy">View policy</button>
 
     <LargePolicyModal
       v-if="isShowPolicyModal"
@@ -114,7 +114,7 @@ export default {
       error({ statusCode: 504, message: 'Data not available' })
     }
   },
-  
+
   data() {
     return {
       isShowPolicyModal: false,
@@ -172,8 +172,17 @@ export default {
   },
   methods: {
     viewPolicy() {
-      this.isShowPolicyModal = !this.isShowPolicyModal;
-    }
+      this.isShowPolicyModal = !this.isShowPolicyModal
+    },
   },
 }
 </script>
+
+
+<style scoped>
+.view-policy {
+  margin-right: 4rem;
+  font-size: 1.4rem;
+  margin-left: 4rem;
+}
+</style>
